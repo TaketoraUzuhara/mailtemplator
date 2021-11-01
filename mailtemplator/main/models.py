@@ -38,7 +38,7 @@ class UserManager(BaseUserManager):
 
 
 class Users(AbstractBaseUser, PermissionsMixin):
-    username = models.CharField(_('username'),max_length=30,blank=True,unique=True)
+    username = models.CharField(_('username'),max_length=30,blank=False,unique=True)
     first_name = models.CharField(_('first name'), max_length=30, blank=True)
     last_name = models.CharField(_('last name'), max_length=150, blank=True)
     email = models.EmailField(_('email address'), blank=True)
@@ -80,7 +80,7 @@ class Users(AbstractBaseUser, PermissionsMixin):
 #テンプレートのサンプル==================================
 class SampleTemplates(models.Model):
     template_name = models.CharField(_('template_name'), max_length=30, blank=False)
-    content = models.CharField(_('content'), max_length=2000, blank=False)
+    content = models.TextField(_('content'), max_length=2000, blank=False)
     class Meta:
         verbose_name = _('sampletemplate')
         verbose_name_plural = _('sampletemplates')
@@ -109,7 +109,7 @@ class Templates(models.Model):
     user = models.ForeignKey(Users,on_delete=models.CASCADE)#,related_name='T_users'
     label = models.ForeignKey(Labels,on_delete=models.CASCADE)#,related_name='T_labels'
     template_name =  models.CharField(_('template_name'), max_length=30, blank=False)
-    content = models.CharField(_('content'), max_length=2000, blank=False)
+    content = models.TextField(_('content'), max_length=2000, blank=False)
 
     class Meta:
         verbose_name = _('Template')
