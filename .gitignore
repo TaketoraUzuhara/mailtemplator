@@ -229,6 +229,16 @@ typings/
 .next
 
 # nuxt.js build output
+=======
+# nuxt vuetify .gitignore
+
+# dependencies
+node_modules
+
+# logs
+npm-debug.log
+
+# Nuxt build
 .nuxt
 
 # Nuxt generate
@@ -253,4 +263,6 @@ sw.*
 *.swp
 
 
+=======
+>>>>>>> b75e69c7ef3481fad66ce3e0f6c3af96c4db7ab2
 # End of https://www.toptal.com/developers/gitignore/api/django,vue
